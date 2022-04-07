@@ -15,4 +15,4 @@ echo "Testing arm64v8 emulation"
 docker run --rm --platform linux/arm64/v8 -t arm64v8/ubuntu uname -m
 
 echo "Running build in container"
-docker run --rm --platform linux/arm64/v8 -t arm64v8/ubuntu -v "$(pwd)":/build /build/build-node.sh
+docker run --rm -v "$(pwd)":/build --platform linux/arm64/v8 -t arm64v8/ubuntu /build/build-node.sh
