@@ -26,8 +26,8 @@ cd node || exit 1
 export CC="aarch64-linux-gnu-gcc-10"
 export CXX="aarch64-linux-gnu-g++-10"
 export CPP="aarch64-linux-gnu-cpp-10"
-export CFLAGS="${CFLAGS} -march=armv8.3-a -mbranch-protection=pac-ret "
-export CXXFLAGS="${CXXFLAGS} -march=armv8.3-a -mbranch-protection=pac-ret "
+export CFLAGS="${CFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
+export CXXFLAGS="${CXXFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
 
 echo "Building Node"
 ./configure --cross-compiling --dest-cpu arm64 --dest-os linux && make -j8
