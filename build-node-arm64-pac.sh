@@ -6,6 +6,12 @@ echo "Updating apt"
 sudo apt-get update -y
 echo "Installing dependencies"
 sudo apt-get install build-essential python3 python3-pip gcc-10-aarch64-linux-gnu g++-10-aarch64-linux-gnu binutils-aarch64-linux-gnu git -y
+echo "Installing qemu support"
+sudo apt-get install qemu binfmt-support qemu-user-static
+echo "Register qemu support with docker"
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+echo "Testing arm64v8 emulation"
+docker run --rm -t arm64v8/ubuntu uname -m
 
 VERSION=16.14.2
 TAG_VERSION=v${VERSION}
