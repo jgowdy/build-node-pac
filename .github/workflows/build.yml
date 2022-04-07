@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build Node
-      run: ./build-node-arm64-pac.sh
+      run: ./build-node-docker-arm64.sh
