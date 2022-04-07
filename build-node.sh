@@ -2,8 +2,8 @@
 
 set -xeu
 
-sudo apt-get update -y
-sudo apt-get install build-essential gcc-10 g++-10 git python3 python3-pip
+apt-get update -y
+apt-get install build-essential gcc-10 g++-10 git python3 python3-pip
 
 cd /build || exit 1
 
