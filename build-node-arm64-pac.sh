@@ -11,7 +11,7 @@ sudo apt-get install qemu binfmt-support qemu-user-static
 echo "Register qemu support with docker"
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 echo "Testing arm64v8 emulation"
-docker run --rm -t arm64v8/ubuntu uname -m
+docker run --rm --platform linux/arm64/v8 -t arm64v8/ubuntu uname -m
 
 VERSION=16.14.2
 TAG_VERSION=v${VERSION}
