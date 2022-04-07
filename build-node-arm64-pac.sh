@@ -37,7 +37,7 @@ export CFLAGS="${CFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
 export CXXFLAGS="${CXXFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
 
 echo "Building Node"
-./configure --cross-compiling --dest-cpu arm64 --dest-os linux && make -j8
+./configure --cross-compiling --dest-cpu arm64 --dest-os linux && make -j$(nproc)
 echo "Verifying output"
 stat ./node
 objdump --disassemble-all ./node | grep paciasap && echo PAC build successful && exit 0 || echo No PAC instructions found! && exit 1
