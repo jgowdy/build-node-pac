@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "Updating apt"
-apt-get update -y
+sudo apt-get update -y
 echo "Installing dependencies"
-apt-get install build-essential python3 python3-pip gcc-10-aarch64-linux-gnu g++-10-aarch64-linux-gnu binutils-aarch64-linux-gnu git -y
+sudo apt-get install build-essential python3 python3-pip gcc-10-aarch64-linux-gnu g++-10-aarch64-linux-gnu binutils-aarch64-linux-gnu git -y
 
 VERSION=16.14.2
 TAG_VERSION=v${VERSION}
