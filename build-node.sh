@@ -7,6 +7,13 @@ apt-get install build-essential gcc-10 g++-10 git python3 python3-pip -y
 
 cd /build || exit 1
 
+VERSION=16.14.2
+TAG_VERSION=v${VERSION}
+
+rm -rf ./node
+git clone --depth 1 --branch ${TAG_VERSION} https://github.com/nodejs/node.git 
+cd node || exit 1
+
 export CFLAGS="${CFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
 export CXXFLAGS="${CXXFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
 
