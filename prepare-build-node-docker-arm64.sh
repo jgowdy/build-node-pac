@@ -20,7 +20,6 @@ TAG_VERSION=v${VERSION}
 rm -rf ./node
 echo "Cloning Node.js"
 git clone --depth 1 --branch ${TAG_VERSION} https://github.com/nodejs/node.git 
-cd node || exit 1
 
 echo "Running configure in container"
 timeout 350m docker run --rm -v "$(pwd)":/build --platform linux/arm64/v8 -t arm64v8/ubuntu /build/in-container-configure-node.sh
