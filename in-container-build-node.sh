@@ -10,4 +10,4 @@ cd /build/node || exit 1
 export CFLAGS="${CFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
 export CXXFLAGS="${CXXFLAGS-} -march=armv8.3-a -mbranch-protection=pac-ret "
 
-make -j8
+make -j$(nproc)
