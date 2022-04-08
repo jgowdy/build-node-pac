@@ -12,5 +12,18 @@ jobs:
     timeout-minutes: 4320
     steps:
     - uses: actions/checkout@v2
-    - name: Build Node
-      run: ./build-node-docker-arm64.sh
+    - name: Prepare to build Node
+      run: ./prepare-build-node-docker-arm64.sh
+    - name: Build Node first attempt
+      run: ./build-with-timeout.sh
+      timeout-minutes: 4320
+    - name: Build Node second attempt
+      run: ./build-with-timeout.sh
+      timeout-minutes: 4320
+    - name: Build Node third attempt
+      run: ./build-with-timeout.sh
+      timeout-minutes: 4320
+    - name: Build Node fourth attempt
+      run: ./build-with-timeout.sh      
+      timeout-minutes: 4320
+            
