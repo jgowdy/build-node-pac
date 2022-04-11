@@ -22,7 +22,9 @@ echo "Cloning Node.js"
 git clone --depth 1 --branch ${TAG_VERSION} https://github.com/nodejs/node.git 
 
 echo "Running configure in container"
-export CID=$(docker run -d -a stderr --name build-container -v "$(pwd)":/build --platform linux/arm64/v8 -t arm64v8/amazonlinux:2 /build/in-container-configure-node-amazon.sh)
+export CID=$(docker run -d --name build-container -v "$(pwd)":/build --platform linux/arm64/v8 -t arm64v8/amazonlinux:2 /build/in-container-configure-node-amazon.sh)
+
+docker logs --follow &
 
 sleep 21000
 
