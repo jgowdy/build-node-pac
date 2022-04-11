@@ -2,7 +2,13 @@
 
 echo "Resuming container"
 
-export CID=$(docker ps | grep -v CONTAINER | tail -n 1 | cut -f 1 -d ' ')
+export CID=$(docker ps | grep -v CONTAINER | grep Paused | tail -n 1 | cut -f 1 -d ' ')
+
+if [ "${CID}" = "" ]; 
+then
+    echo "No paused container, exiting"
+    exit 0;
+fi
 
 docker logs --follow ${CID} &
 

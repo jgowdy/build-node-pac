@@ -17,7 +17,6 @@ docker run --rm --platform linux/arm64/v8 -t arm64v8/amazonlinux:2 uname -m
 VERSION=16.14.2
 TAG_VERSION=v${VERSION}
 
-rm -rf ./node
 echo "Cloning Node.js"
 git clone --depth 1 --branch ${TAG_VERSION} https://github.com/nodejs/node.git 
 
@@ -26,7 +25,6 @@ export CID=$(docker run -d --name build-container -v "$(pwd)":/build --platform 
 
 docker logs --follow ${CID} &
 
-#sleep 21000
 sleep 10
 
 kill -9 %1
