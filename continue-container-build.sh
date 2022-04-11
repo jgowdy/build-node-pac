@@ -2,9 +2,11 @@
 
 echo "Resuming container"
 
+export CID=$(docker ps | grep -v CONTAINER | tail -n 1 | cut -f 1 -d ' ')
+
 docker logs --follow ${CID} &
 
-docker ps | grep -v CONTAINER | tail -n 1 | cut -f 1 -d ' ' | xargs docker unpause
+docker unpause ${CID}
 
 sleep 21000
 
@@ -12,4 +14,4 @@ kill -9 %1
 
 echo "Pausing container"
 
-docker ps | grep -v CONTAINER | tail -n 1 | cut -f 1 -d ' ' | xargs docker pause
+docker pause ${CID}
