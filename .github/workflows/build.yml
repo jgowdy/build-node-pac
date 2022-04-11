@@ -18,12 +18,12 @@ jobs:
       run: ./build-with-timeout-amazon.sh
       timeout-minutes: 4320
     - name: Build Node second attempt
-      run: ./build-with-timeout.sh
+      run: ./build-with-timeout-amazon.sh
       timeout-minutes: 4320
     - name: Build Node third attempt
-      run: ./build-with-timeout.sh
+      run: ./build-with-timeout-amazon.sh
       timeout-minutes: 4320
     - name: Build Node fourth attempt
-      run: ./build-with-timeout.sh      
+      run: ./build-with-timeout-amazon.sh      
       timeout-minutes: 4320
             
