@@ -26,7 +26,8 @@ export CID=$(docker run -d --name build-container -v "$(pwd)":/build --platform 
 
 docker logs --follow ${CID} &
 
-sleep 21000
+#sleep 21000
+sleep 10
 
 kill -9 %1
 
