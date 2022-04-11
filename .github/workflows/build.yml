@@ -15,7 +15,7 @@ jobs:
     - name: Prepare to build Node
       run: ./prepare-build-node-docker-arm64-amazon.sh
     - name: Build Node first attempt
-      run: ./build-with-timeout.sh
+      run: ./build-with-timeout-amazon.sh
       timeout-minutes: 4320
     - name: Build Node second attempt
       run: ./build-with-timeout.sh
