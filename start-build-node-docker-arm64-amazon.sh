@@ -28,4 +28,6 @@ docker logs --follow ${CID} &
 
 sleep 21000
 
+kill -9 %1
+
 docker pause ${CID}
