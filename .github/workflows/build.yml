@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Prepare to build Node
-      run: ./prepare-build-node-docker-arm64.sh
+      run: ./prepare-build-node-docker-arm64-amazon.sh
     - name: Build Node first attempt
       run: ./build-with-timeout.sh
       timeout-minutes: 4320
