@@ -13,17 +13,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Prepare to build Node
-      run: ./prepare-build-node-docker-arm64-amazon.sh
+      run: ./start-build-node-docker-arm64-amazon.sh
     - name: Build Node first attempt
-      run: ./build-with-timeout-amazon.sh
+      run: ./continue-container-build.sh
       timeout-minutes: 4320
     - name: Build Node second attempt
-      run: ./build-with-timeout-amazon.sh
+      run: ./continue-container-build.sh
       timeout-minutes: 4320
     - name: Build Node third attempt
-      run: ./build-with-timeout-amazon.sh
+      run: ./continue-container-build.sh
       timeout-minutes: 4320
     - name: Build Node fourth attempt
-      run: ./build-with-timeout-amazon.sh      
+      run: ./continue-container-build.sh
       timeout-minutes: 4320
             
